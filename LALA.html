@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LALA DASSIE ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffc0cb, #ffe4ec, #ffb6c1);
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 25px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 25px #d94f7c55;
+}
+
+h1, h2 {
+    color: #e63972;
+}
+
+p {
+    color: #754052;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.photo {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    background: #ff4f87;
+    color: white;
+    padding: 13px 20px;
+    font-size: 16px;
+    margin: 7px 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e62968;
+}
+
+#letter, #gallery, #secret {
+    display: none;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ff3678;
+    pointer-events: none;
+    animation: float 5s linear forwards;
+    z-index: 0;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- COVER PAGE -->
+    <div id="cover">
+        <h1>💌 Just for You</h1>
+        <p>
+            Ginawa ko to para sayo.
+            Hindi ko alam kung success ba to o papalpak HAHAHA
+        </p>
+
+        <div style="font-size:70px">💝</div>
+
+        <button onclick="openLetter()">
+            OPEN MY LETTER 💌
+        </button>
+    </div>
+
+    <!-- LOVE LETTER -->
+    <div id="letter">
+
+        <h1>My LALA 💗</h1>
+
+        <img src="love.jpg"
+             class="photo"
+             alt="My favorite picture"
+             onerror="this.style.display='none'">
+
+        <h2>Hi, ASHTY </h2>
+
+        <p>
+            I just want you to know na gustong-gusto kita, Ash.
+            And I'm willing to wait for you, no matter how long
+            it takes. I'm also willing to endure the sadness of
+            being without you, lalo na ngayon na kahit lumayo ka pa sa akin.
+            <br><br>
+
+            Masaya ako lagi para sa'yo, at sobrang proud na proud ako sa'yo.
+            Kung tatanungin man ako ng lahat, never na never kitang
+            pinagsisihan. Ikaw at ikaw lang ang hihintayin at pipiliin ko.
+            At kung magtatanong ako ulit, pwede pa ba akong manligaw?
+            <br><br>
+
+            Thank you for the days we spend together.
+            Thank you for being there for me whenever I feel sad.
+            And thank you for making me laugh.
+            I'm truly grateful for every moment I get to spend with you, Ash.
+            <br><br>
+
+            Sorry sa lahat ng nagawa ko, at aaminin ko na pinagsisisihan ko 'yon.
+            Yung relo ko, importante sa akin 'yan ah.
+            Keep mo muna. Promise ko sa'yo na babalikan kita, di ba?
+            At kung wala na talaga, go lang. 
+        </p>
+
+        <h2>Sana basahin mo kahit jejemon pagkakagawa ko</h2>
+
+        <button onclick="showSecret()">
+            ETO PA HEHE 💕
+        </button>
+
+        <p id="secret">
+            I LOVE YOU SO MUCH! 
+            You are my favorite person palagi!!
+            Masaya ako palagi dahil sa'yo.
+            Huwag ka nang mag-alala, hindi mabigat sa akin
+            kung kailangan mong lumayo.
+            At mas lalong hindi bibigat ang dibdib ko
+            kung hindi na ako ang gusto mo.
+            <br><br>
+
+            Pero lagi mong tandaan, andito lang ako palagi para sa'yo.
+            Kung ano man ang problema mo, willing akong tumulong.
+            You can always talk to me. I will do my best to be there for you. ❤️
+        </p>
+
+        <button onclick="showGallery()">
+            OUR PICTURES 📸
+        </button>
+
+        <button onclick="backToCover()">
+            BACK 💌
+        </button>
+
+    </div>
+
+    <!-- PICTURE GALLERY -->
+    <div id="gallery">
+
+        <h1>Our Memories 📸</h1>
+
+        <p>
+            Every picture has a memory,
+            and every memory with you is special to me.
+        </p>
+
+        <!-- CHANGE THE FILENAMES TO YOUR OWN PICTURES -->
+        <img src="love.jpg" class="photo" alt="Our memory">
+
+        <img src="picture2.jpg" class="photo"
+             alt="Memory 2"
+             onerror="this.style.display='none'">
+
+        <img src="picture3.jpg" class="photo"
+             alt="Memory 3"
+             onerror="this.style.display='none'">
+
+        <img src="picture4.jpg" class="photo"
+             alt="Memory 4"
+             onerror="this.style.display='none'">
+
+        <h2>More Memories With You </h2>
+
+        <p>
+            I hope we can make more beautiful memories together, Ash.
+            No matter what happens, I'll always be thankful
+            that I got to know you.
+        </p>
+
+        <button onclick="backToLetter()">
+            BACK TO MY LETTER 💌
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+function openLetter() {
+    document.getElementById("cover").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+}
+
+function showSecret() {
+    const secret = document.getElementById("secret");
+
+    if (secret.style.display === "block") {
+        secret.style.display = "none";
+    } else {
+        secret.style.display = "block";
+    }
+}
+
+function showGallery() {
+    document.getElementById("letter").style.display = "none";
+    document.getElementById("gallery").style.display = "block";
+    window.scrollTo(0, 0);
+}
+
+function backToLetter() {
+    document.getElementById("gallery").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+    window.scrollTo(0, 0);
+}
+
+function backToCover() {
+    document.getElementById("letter").style.display = "none";
+    document.getElementById("cover").style.display = "block";
+    window.scrollTo(0, 0);
+}
+
+function makeHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 7000);
+}
+
+setInterval(makeHeart, 500);
+</script>
+
+</body>
+</html>
